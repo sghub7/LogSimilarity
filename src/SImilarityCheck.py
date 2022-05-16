@@ -71,12 +71,18 @@ print(pDict["SentenceTransformer-HuggingFace-bert-base-nli-mean-tokens"])
 ### TensorFlow
 import tensorflow as tf
 import tensorflow_hub as hub
-import numpy as np
-module_url = "saved_model.pb"
+
+## Below can be used to pull model directly from tfhub.
+# module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
+# model = hub.load(module_url)
+
+## Alternatively model canbe pulled and added to project structure.
+##
 # import tarfile
 # tar = tarfile.open(module_url, "r:gz")
 # tar.extractall()
 # tar.close()
+module_url = "saved_model.pb"
 
 model = tf.keras.models.load_model('models')
 print ("module %s loaded" % module_url)
