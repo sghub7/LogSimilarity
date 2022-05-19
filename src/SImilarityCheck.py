@@ -73,8 +73,8 @@ import tensorflow as tf
 import tensorflow_hub as hub
 
 ## Below can be used to pull model directly from tfhub.
-# module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
-# model = hub.load(module_url)
+module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
+model = hub.load(module_url)
 
 ## Alternatively model canbe pulled and added to project structure.
 ##
@@ -82,9 +82,9 @@ import tensorflow_hub as hub
 # tar = tarfile.open(module_url, "r:gz")
 # tar.extractall()
 # tar.close()
-module_url = "saved_model.pb"
+# module_url = "saved_model.pb"
 
-model = tf.keras.models.load_model('models')
+# model = tf.keras.models.load_model('models')
 print ("module %s loaded" % module_url)
 tf_sentence_embeddings = model(sentences)
 z=cosine_similarity(
